@@ -26,6 +26,18 @@ router.get('/:id_produto', (req, res, next) => {
             mensagem: 'Você passou um ID'
         });
     }
-})
+});
+
+router.patch('/', (req, res, next) => {
+    res.status(201).send({
+        mensagem: 'usando o PATCH dentro da rota de produtos'
+    })
+});
+
+router.delete('/', (req, res, next) => {
+    res.status(201).send({
+        mensagem: 'usando o DELETE dentro da rota de produtos'
+    })
+});
 
 module.exports = router;
