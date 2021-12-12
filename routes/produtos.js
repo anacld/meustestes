@@ -13,4 +13,19 @@ router.post('/', (req, res, next) => {
     });
 });
 
+router.get('/:id_produto', (req, res, next) => {
+    const id = req.params.id_produto
+
+    if(id === 'especial') {
+        res.status(200).send({
+            mensagem: 'Você descobriu o ID especial',
+            id: id
+        });
+    } else {
+        res.status(200).send({
+            mensagem: 'Você passou um ID'
+        });
+    }
+})
+
 module.exports = router;
