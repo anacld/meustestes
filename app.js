@@ -7,9 +7,11 @@ app.use('/produtos', rotaProdutos);
 const rotaPedidos = require('./routes/pedidos');
 app.use('/pedidos', rotaPedidos);
 
-//app.use((req, res, next) => {
-//    res.status(200).send({
-//        mensagem: 'Ok, deu certo'
-//    });
-//});
+// tratamento de erro quando nao encontra a rota
+app.use((req, res, next) => {
+    const erro = new Error('Página não encontrada!');
+    erro.status(404);
+    next(erro);
+})
+
 module.exports = app;
