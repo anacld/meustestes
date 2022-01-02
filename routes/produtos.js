@@ -31,6 +31,7 @@ router.get('/', (req, res, next) => {
                             id_produto: prod.id_produto,
                             nome: prod.nome,
                             preco: prod.preco,
+                            imagem_produto: prod.imagem_produto,
                             request: {
                                 tipo: 'GET',
                                 descricao: 'Retorna os detalhes de um produto específico',
@@ -97,6 +98,7 @@ router.get('/:id_produto', (req, res, next) => {
                         id_produto: result[0].id_produto,
                         nome: result[0].nome,
                         preco: result[0].preco,
+                        imagem_produto: result[0].imagem_produto,
                         request: {
                             tipo: 'GET',
                             descricao: 'Retorna os detalhes de um produto específico',
@@ -126,6 +128,7 @@ router.patch('/', (req, res, next) => {
                         id_produto: req.body.id_produto,
                         nome: req.body.nome,
                         preco: req.body.preco,
+                        imagem_produto: req.file.path,
                         request: {
                             tipo: 'POST',
                             descricao: 'Altera um produto',
