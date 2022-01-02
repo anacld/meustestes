@@ -95,6 +95,7 @@ router.get('/:id_produto', (req, res, next) => {
     });
 });
 
+//ALTERA UM PRODUTO ESPECIFICO
 router.patch('/', (req, res, next) => {
     mysql.getConnection((error, conn) =>{
         if (error) { return res.status(500).send({ error: error}); }
