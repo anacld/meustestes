@@ -46,7 +46,7 @@ router.get('/', (req, res, next) => {
 
 //INSERE UM PEDIDO
 router.post('/', (req, res, next) => {
-    mysql.getConnection((error, conn) =>{
+     mysql.getConnection((error, conn) =>{
         if (error) { return res.status(500).send({ error: error}); }
         conn.query('SELECT * FROM produtos WHERE id_produto = ?', [req.body.id_produto],
             (error, result, field) => {
