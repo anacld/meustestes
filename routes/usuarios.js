@@ -9,7 +9,7 @@ router.post('/cadastro', (req, res, next) => {
        bcrypt.hash(req.body.senha, 10, (errBcrypt, hash) => {
            if (errBcrypt) { return res.status(500).send({ error: errBcrypt}); }
            conn.query(`INSERT INTO usuarios (email, senha) VALUES (?,?)`, 
-           [req.body.emal, hash],
+           [req.body.email, hash],
            (error, results) => {
                 conn.release(); //importante libera a conexao
                 if (error) {return res.status(500).send({error: error}); }
